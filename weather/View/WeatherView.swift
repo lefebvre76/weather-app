@@ -13,7 +13,22 @@ struct WeatherView: View {
 
     var body: some View {
         VStack {
-            ProgressBarView(progressValue: viewModel.progressBarValue)
+            Text(viewModel.message + "\n")
+                .padding()
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+            if  viewModel.progressBarValue > 1 {
+                ProgressBarView(progressValue: viewModel.progressBarValue)
+            } else {
+                Button("common.buttons.restart".localized()) {
+                    viewModel.stopTimers()
+                    viewModel.launchTimers()
+                }.padding()
+                .background(Color.primaryColor())
+                .foregroundColor(.white)
+                .font(.headline)
+                .cornerRadius(10)
+            }
         }
         .padding()
         .onAppear {

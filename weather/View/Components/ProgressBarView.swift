@@ -10,24 +10,23 @@ import SwiftUI
 
 struct ProgressBarView: View {
     let progressValue: CGFloat
-    var height: Int = 25
+    var height: Int = 30
 
     var body: some View {
         ZStack {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: CGFloat(height/2), style: .continuous)
-                        .fill(.primary)
                         .frame(width: geometry.size.width, height: CGFloat(height))
                         .opacity(0.5)
                         .foregroundColor(Color.primaryColor())
                     RoundedRectangle(cornerRadius: CGFloat(height/2), style: .continuous)
-                        .fill(.primary)
                         .frame(
                             width: min(progressValue * geometry.size.width,
                                        geometry.size.width),
                             height: CGFloat(height)
                         )
+                        .animation(.linear)
                         .foregroundColor(Color.primaryColor())
                 }
             }
