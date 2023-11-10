@@ -16,7 +16,7 @@ struct WelcomeView: View {
                     Text("common.buttons.next".localized())
                     Image(systemName: "chevron.right")
                 }.padding()
-                .background(.buttonBackground)
+                    .background(Color.primaryColor())
                 .foregroundColor(.white)
                 .font(.headline)
                 .cornerRadius(10)

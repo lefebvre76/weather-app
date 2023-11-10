@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "fr",
   "strings" : {
+    "%@ %%" : {
+
+    },
     "common.buttons.next" : {
       "extractionState" : "manual",
       "localizations" : {

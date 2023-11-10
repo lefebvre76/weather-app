@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 extension String {
     func localized(arguments: CVarArg...) -> String {
         return String(format: NSLocalizedString(self, comment: ""), arguments)
