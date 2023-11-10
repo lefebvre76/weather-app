@@ -1,0 +1,40 @@
+{
+  "sourceLanguage" : "fr",
+  "strings" : {
+    "common.buttons.next" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivant"
+          }
+        }
+      }
+    },
+    "welcome.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Weather, allowing you to load weather information for French cities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue dans l'application Weather, vous permettant de charger les infos météorologiques de villes françaises"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
