@@ -7,5 +7,6 @@ target 'weather' do
 
   # Pods for weather application
   pod 'SwiftLint'
+  pod 'Alamofire'
 
 end

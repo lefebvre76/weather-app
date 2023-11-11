@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "fr",
   "strings" : {
+    "%@" : {
+
+    },
     "%@ %%" : {
 
     },
@@ -37,6 +40,12 @@
           }
         }
       }
+    },
+    "error" : {
+
+    },
+    "Load in progress" : {
+
     },
     "messages.0" : {
       "extractionState" : "manual",

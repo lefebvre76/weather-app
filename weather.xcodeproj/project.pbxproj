@@ -18,6 +18,8 @@
 		EB5B1B742AFE8E50004F39AE /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B1B732AFE8E50004F39AE /* WeatherViewModel.swift */; };
 		EB5B1B792AFE9884004F39AE /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B1B782AFE9884004F39AE /* ProgressBarView.swift */; };
 		EB5B1B802AFEA7A2004F39AE /* Color+assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B1B7F2AFEA7A2004F39AE /* Color+assets.swift */; };
+		EB5B1B832AFEE4F3004F39AE /* WeatherApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B1B822AFEE4F3004F39AE /* WeatherApiService.swift */; };
+		EB5B1B862AFEE834004F39AE /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B1B852AFEE834004F39AE /* WeatherResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		EB5B1B732AFE8E50004F39AE /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		EB5B1B782AFE9884004F39AE /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		EB5B1B7F2AFEA7A2004F39AE /* Color+assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+assets.swift"; sourceTree = "<group>"; };
+		EB5B1B822AFEE4F3004F39AE /* WeatherApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiService.swift; sourceTree = "<group>"; };
+		EB5B1B852AFEE834004F39AE /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		EB5B1B5A2AFE6C3B004F39AE /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				EB5B1B842AFEE827004F39AE /* Model */,
+				EB5B1B812AFEE4E3004F39AE /* Services */,
 				EB5B1B702AFE8E20004F39AE /* ViewModel */,
 				EB5B1B6E2AFE752E004F39AE /* View */,
 				EB5B1B6B2AFE7296004F39AE /* Utils */,
@@ -149,6 +155,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		EB5B1B812AFEE4E3004F39AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B1B822AFEE4F3004F39AE /* WeatherApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EB5B1B842AFEE827004F39AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5B1B852AFEE834004F39AE /* WeatherResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +182,7 @@
 				EB5B1B542AFE6C3B004F39AE /* Sources */,
 				EB5B1B552AFE6C3B004F39AE /* Frameworks */,
 				EB5B1B562AFE6C3B004F39AE /* Resources */,
+				50EEF48D226632147B6B3D0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +241,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		50EEF48D226632147B6B3D0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-weather/Pods-weather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-weather/Pods-weather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-weather/Pods-weather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9695F8DB2B7D377F1FD79A7E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,7 +291,9 @@
 				EB5B1B792AFE9884004F39AE /* ProgressBarView.swift in Sources */,
 				EB5B1B802AFEA7A2004F39AE /* Color+assets.swift in Sources */,
 				EB5B1B5E2AFE6C3B004F39AE /* WelcomeView.swift in Sources */,
+				EB5B1B862AFEE834004F39AE /* WeatherResult.swift in Sources */,
 				EB5B1B5C2AFE6C3B004F39AE /* weatherApp.swift in Sources */,
+				EB5B1B832AFEE4F3004F39AE /* WeatherApiService.swift in Sources */,
 				EB5B1B6D2AFE72BE004F39AE /* String+i18n.swift in Sources */,
 				EB5B1B722AFE8E42004F39AE /* WeatherView.swift in Sources */,
 			);
@@ -389,6 +431,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"weather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -418,6 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"weather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
