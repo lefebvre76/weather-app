@@ -7,9 +7,44 @@
 
 import Foundation
 
-struct WeatherResult: Decodable {
+class WeatherResult: Decodable {
     var weather: [Weather]
     var main: Main
+    var city: String?
+    
+    func getIcon() -> String {
+        if let weatherId = weather.first?.id {
+            if weatherId < 300 {
+                return "cloud.bolt"
+            }
+            if weatherId < 400 {
+                return "cloud.drizzle"
+            }
+            if weatherId <= 504 {
+                return "cloud.sun.rain"
+            }
+            if weatherId == 511 {
+                return "snowflake"
+            }
+            if weatherId < 600 {
+                return "cloud.drizzle"
+            }
+            if weatherId < 700 {
+                return "snowflake"
+            }
+            if weatherId < 800 {
+                return "cloud.fog"
+            }
+            if weatherId == 800 {
+                return "sun.max"
+            }
+            if weatherId == 801 {
+                return "cloud.sun"
+            }
+            return "smoke"
+        }
+        return "questionmark.circle"
+    }
 }
 
 struct Weather: Decodable {

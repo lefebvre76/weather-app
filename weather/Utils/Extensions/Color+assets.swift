@@ -11,4 +11,10 @@ extension Color {
     static func primaryColor() -> Color {
         return Color("primaryColor")
     }
+//    static func temperatureMax() -> Color {
+//        return Color("temperatureMax")
+//    }
+//    static func temperatureMin() -> Color {
+//        return Color("temperatureMin")
+//    }
 }

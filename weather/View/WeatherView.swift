@@ -17,7 +17,7 @@ struct WeatherView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
-            if  viewModel.progressBarValue > 1 {
+            if  viewModel.progressBarValue < 1 {
                 ProgressBarView(progressValue: viewModel.progressBarValue)
             } else {
                 Button("common.buttons.restart".localized()) {
@@ -29,6 +29,16 @@ struct WeatherView: View {
                 .font(.headline)
                 .cornerRadius(10)
             }
+            ForEach(viewModel.weathers, id: \.city) { weather in
+                WeatherCellView(item: weather)
+            }
+            if (viewModel.loadWeatherInProgress) {
+                Text("Load in progress")
+            }
+            if (viewModel.showError) {
+                Text("error")
+            }
+            Spacer()
         }
         .padding()
         .onAppear {

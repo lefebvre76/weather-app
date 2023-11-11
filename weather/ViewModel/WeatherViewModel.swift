@@ -11,7 +11,7 @@ class WeatherViewModel: ObservableObject {
     
     @Published public var progressBarValue: CGFloat = 0.0
     @Published public var message: String = ""
-    @Published public var weathers: [String: WeatherResult] = [:]
+    @Published public var weathers: [WeatherResult] = []
     @MainActor @Published public var loadWeatherInProgress = false
     @MainActor @Published public var showError = false
 
@@ -53,13 +53,12 @@ class WeatherViewModel: ObservableObject {
                                              userInfo: nil,
                                              repeats: true)
         currentCityIndex = 0
-        weathers = [:]
+        weathers = []
         weatherTimer = Timer.scheduledTimer(timeInterval: self.weatherTimeInterval,
                                             target: self,
                                             selector: #selector(loadData),
                                             userInfo: nil,
                                             repeats: true)
-        loadData()
     }
     
     public func stopTimers() {
@@ -108,9 +107,11 @@ class WeatherViewModel: ObservableObject {
             }
             if let result = await WeatherApiService.show(city: cities[currentCityIndex]) {
                 switch(result) {
-                case let .success(data):
+                case let .success(value):
                     await MainActor.run {
-                        self.weathers[cities[currentCityIndex]] = data
+                        let data = value
+                        data.city = cities[currentCityIndex]
+                        self.weathers.append(data)
                     }
                 default:
                     await MainActor.run {
