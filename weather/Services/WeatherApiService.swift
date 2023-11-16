@@ -10,11 +10,10 @@ import Alamofire
 
 class WeatherApiService {
 
-    private static let apiKey = "API_KEY"
-
     static func show(city: String) async -> Result<WeatherResult, AFError>? {
         guard let query: String = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
-                let local = Locale.current.language.languageCode else { return nil }
+              let local = Locale.current.language.languageCode,
+              let apiKey = ProcessInfo.processInfo.environment["WEATHER_API_KEY"] else { return nil }
         let dataTask = AF.request(
             "https://api.openweathermap.org/data/2.5/weather?q=\(query)" +
             "&lang=\(local)" +
