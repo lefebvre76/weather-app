@@ -15,21 +15,17 @@ struct ProgressBarView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: CGFloat(height/2), style: .continuous)
-                        .frame(width: geometry.size.width, height: CGFloat(height))
-                        .opacity(0.5)
-                        .foregroundColor(Color.primaryColor())
-                    RoundedRectangle(cornerRadius: CGFloat(height/2), style: .continuous)
-                        .frame(
-                            width: min(progressValue * geometry.size.width,
-                                       geometry.size.width),
-                            height: CGFloat(height)
-                        )
-                        .animation(.linear)
-                        .foregroundColor(Color.primaryColor())
-                }
-            }
+                GeometryReader { geo in
+                        Rectangle()
+                            .fill(Color.primaryColor())
+                            .frame(maxWidth: geo.size.width * progressValue)
+                            .animation(.linear)
+                    }
+            }.background(Color.primaryColor())
+                    .opacity(0.5)
+                    .frame(height: CGFloat(height))
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(CGFloat(height)/2)
             Text("\(String(format: "%.f", Double(progressValue * 100))) %")
                 .foregroundStyle(.white)
                 .bold().fixedSize(horizontal: false, vertical: true)
