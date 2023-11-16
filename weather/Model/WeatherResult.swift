@@ -12,6 +12,12 @@ class WeatherResult: Decodable {
     var main: Main
     var city: String?
     
+    init (weather: Weather, main: Main, city: String) {
+        self.weather = [weather]
+        self.main = main
+        self.city = city
+    }
+    
     func getIcon() -> String {
         if let weatherId = weather.first?.id {
             if weatherId < 300 {

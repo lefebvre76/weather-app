@@ -35,16 +35,12 @@ struct WeatherCellView: View {
 
 #Preview {
     VStack(alignment: .leading) {
-        ProgressBarView(progressValue: 0.0)
-        ProgressBarView(progressValue: 0.5, height: 50)
-        ProgressBarView(progressValue: 1)
+        WeatherCellView(item: WeatherResult(weather: Weather(id: 500, main: "Rain", description: "légère pluie", icon: "10d"), main: Main(temp: 282.01, feels_like: 279.26, temp_min: 281.14, temp_max: 282.92, pressure: 1010, humidity: 50), city: "Paris"))
     }
 }
 
 #Preview {
     VStack(alignment: .leading) {
-        ProgressBarView(progressValue: 0.0).preferredColorScheme(.dark)
-        ProgressBarView(progressValue: 0.5, height: 50).preferredColorScheme(.dark)
-        ProgressBarView(progressValue: 1).preferredColorScheme(.dark)
+        WeatherCellView(item: WeatherResult(weather: Weather(id: 500, main: "Rain", description: "légère pluie", icon: "10d"), main: Main(temp: 282.01, feels_like: 279.26, temp_min: 281.14, temp_max: 282.92, pressure: 1010, humidity: 50), city: "Paris")).preferredColorScheme(.dark)
     }
 }
