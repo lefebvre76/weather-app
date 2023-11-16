@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AlertToast
 
 struct WeatherView: View {
     @ObservedObject private var viewModel = WeatherViewModel()
@@ -18,9 +19,6 @@ struct WeatherView: View {
             }
             if (viewModel.loadWeatherInProgress) {
                 LoadView(city: viewModel.currentCity)
-            }
-            if (viewModel.showError) {
-                Text("error")
             }
             Spacer()
             if  viewModel.progressBarValue < 1 {
@@ -48,6 +46,8 @@ struct WeatherView: View {
         }
         .onDisappear {
             viewModel.stopTimers()
+        }.toast(isPresenting: $viewModel.showError){
+            AlertToast(type: .error(.red), title: "api.error".localized())
         }
     }
 }

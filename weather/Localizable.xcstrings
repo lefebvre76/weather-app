@@ -7,6 +7,23 @@
     "%@ %%" : {
 
     },
+    "api.error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "An error occurred while loading data"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur est survenue lors du chargement"
+          }
+        }
+      }
+    },
     "common.buttons.next" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -42,7 +59,21 @@
       }
     },
     "error" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
     },
     "load.city_datas" : {
       "extractionState" : "manual",

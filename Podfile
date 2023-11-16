@@ -6,7 +6,7 @@ target 'weather' do
   use_frameworks!
 
   # Pods for weather application
-  pod 'SwiftLint'
   pod 'Alamofire'
+  pod 'AlertToast'
 
 end
