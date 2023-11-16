@@ -44,8 +44,22 @@
     "error" : {
 
     },
-    "Load in progress" : {
-
+    "load.city_datas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load datas for %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement des données pour %@"
+          }
+        }
+      }
     },
     "messages.0" : {
       "extractionState" : "manual",
